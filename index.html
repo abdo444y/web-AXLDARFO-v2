@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AxL — Agenzia per il Lavoro · Darfo Boario Terme</title>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 1 — HEAD RESOURCES
+       Fonts, icons, external stylesheets
+  ════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-loading">
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 2 — LOADER & CURSOR
+       Page loader overlay + custom cursor elements
+  ════════════════════════════════════════════════════ -->
+  <div id="page-loader" class="loader">
+    <div class="loader-logo">
+      <span class="loader-ax">Ax</span><span class="loader-l">L</span>
+    </div>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <div class="loader-sub">Agenzia per il Lavoro · Darfo Boario Terme</div>
+  </div>
+
+  <div id="cursor-dot"   class="cursor-dot"></div>
+  <div id="cursor-ring"  class="cursor-ring"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 3 — NAVIGATION & HEADER
+       Fixed navbar with mega menu + mobile drawer
+  ════════════════════════════════════════════════════ -->
+  <header id="site-header" class="site-header">
+    <nav class="nav-container">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" data-scroll>
+        <div class="logo-mark">
+          <span class="logo-ax">Ax</span><span class="logo-l">L</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-full">Agenzia per il Lavoro</span>
+          <span class="logo-loc">Darfo Boario Terme · BS</span>
+        </div>
+      </a>
+
+      <!-- Primary links -->
+      <ul class="nav-primary">
+        <li class="nav-item has-mega">
+          <a href="#servizi" class="nav-link" data-scroll>Servizi <span class="nav-arrow">↓</span></a>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <div class="mega-label">Per Candidati</div>
+              <a href="#lavoro"     class="mega-link" data-scroll>🔍 Offerte di Lavoro</a>
+              <a href="#candidati"  class="mega-link" data-scroll>📋 Invia CV</a>
+              <a href="#formazione" class="mega-link" data-scroll>📚 Formazione</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-label">Per Aziende</div>
+              <a href="#servizi"    class="mega-link" data-scroll>🤝 Ricerca &amp; Selezione</a>
+              <a href="#servizi"    class="mega-link" data-scroll>🔄 Somministrazione</a>
+              <a href="#divisioni"  class="mega-link" data-scroll>📊 RPO Outsourcing</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-label">Divisioni</div>
+              <a href="#divisioni"  class="mega-link" data-scroll>💻 Technology</a>
+              <a href="#divisioni"  class="mega-link" data-scroll>🏥 Sanità</a>
+              <a href="#divisioni"  class="mega-link" data-scroll>⭐ Alti Profili</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#lavoro"     class="nav-link" data-scroll>Offerte</a></li>
+        <li class="nav-item"><a href="#divisioni"  class="nav-link" data-scroll>Divisioni</a></li>
+        <li class="nav-item"><a href="#filiali"    class="nav-link" data-scroll>Filiali</a></li>
+        <li class="nav-item"><a href="#chi-siamo"  class="nav-link" data-scroll>Chi Siamo</a></li>
+      </ul>
+
+      <!-- Nav actions -->
+      <div class="nav-actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-sun">☀</span>
+          <span class="theme-moon">☽</span>
+        </button>
+        <a href="#candidati" class="btn-nav-cta" data-scroll>Candidati ora</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-inner">
+      <div class="drawer-logo">Ax<span>L</span></div>
+      <nav class="drawer-nav">
+        <a href="#servizi"   class="drawer-link" data-scroll>Servizi</a>
+        <a href="#lavoro"    class="drawer-link" data-scroll>Offerte</a>
+        <a href="#divisioni" class="drawer-link" data-scroll>Divisioni</a>
+        <a href="#filiali"   class="drawer-link" data-scroll>Filiali</a>
+        <a href="#chi-siamo" class="drawer-link" data-scroll>Chi Siamo</a>
+        <a href="#candidati" class="drawer-link drawer-cta" data-scroll>Candidati ora →</a>
+      </nav>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/axl_officialpage/" target="_blank">IG</a>
+        <a href="https://www.linkedin.com/company/axl-spa"   target="_blank">LI</a>
+        <a href="https://www.facebook.com/AxL-Agenzia-per-il-Lavoro-1265798650169753/" target="_blank">FB</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 4 — HERO SECTION
+       Full-screen hero with animated text + particles
+  ════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <section id="hero" class="section-hero">
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+      <div class="hero-layout">
+        <div class="hero-left">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span class="eyebrow-text">30 Filiali · Italia</span>
+            <span class="eyebrow-line"></span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="ht-line" data-delay="0">Il tuo</span>
+            <span class="ht-line accent" data-delay="120">futuro</span>
+            <span class="ht-line" data-delay="240">professionale</span>
+            <span class="ht-line ht-outline" data-delay="360">inizia qui.</span>
+          </h1>
+
+          <p class="hero-desc">
+            AxL è l'agenzia per il lavoro leader in Italia. Ricerca personale,
+            selezione, somministrazione e formazione professionale — dal 2004.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#lavoro"    class="btn-hero-primary" data-scroll>
+              <span>Cerca lavoro</span>
+              <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#servizi"   class="btn-hero-ghost" data-scroll>
+              <span>Per aziende</span>
+            </a>
+          </div>
+
+          <div class="hero-kpis">
+            <div class="kpi-item">
+              <span class="kpi-n" data-count="30">0</span><span class="kpi-s">+</span>
+              <span class="kpi-l">Filiali</span>
+            </div>
+            <div class="kpi-sep"></div>
+            <div class="kpi-item">
+              <span class="kpi-n" data-count="15">0</span><span class="kpi-s">k</span>
+              <span class="kpi-l">Inseriti</span>
+            </div>
+            <div class="kpi-sep"></div>
+            <div class="kpi-item">
+              <span class="kpi-n" data-count="20">0</span><span class="kpi-s">+</span>
+              <span class="kpi-l">Anni</span>
+            </div>
+            <div class="kpi-sep"></div>
+            <div class="kpi-item">
+              <span class="kpi-n" data-count="98">0</span><span class="kpi-s">%</span>
+              <span class="kpi-l">Soddisfazione</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card-stack">
+            <div class="hcs-card hcs-back"></div>
+            <div class="hcs-card hcs-mid"></div>
+            <div class="hcs-card hcs-front">
+              <div class="hcs-tag">Offerta del giorno</div>
+              <div class="hcs-title">Sviluppatore Java Senior</div>
+              <div class="hcs-meta">
+                <span>📍 Darfo / Remote</span>
+                <span>💶 3.200€/mese</span>
+              </div>
+              <div class="hcs-skills">
+                <span>Java</span><span>Spring</span><span>Docker</span>
+              </div>
+              <a href="#candidati" class="hcs-btn" data-scroll>Candidati →</a>
+            </div>
+          </div>
+
+          <div class="hero-floating-badges">
+            <div class="hfb hfb-1">✅ Risposta in 24h</div>
+            <div class="hfb hfb-2">🏆 Top Employer 2025</div>
+            <div class="hfb hfb-3">🤝 2.500+ Aziende</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll-cue">
+        <span>Scorri</span>
+        <div class="scroll-wheel"><div class="scroll-dot"></div></div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 5 — TICKER / MARQUEE
+       Scrolling brand ticker
+  ════════════════════════════════════════════════════ -->
+    <div class="ticker-wrap" id="ticker">
+      <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-set">
+          <span>Ricerca &amp; Selezione</span><em>◆</em>
+          <span>Somministrazione</span><em>◆</em>
+          <span>Formazione Professionale</span><em>◆</em>
+          <span>30 Filiali · Italia</span><em>◆</em>
+          <span>Alti Profili</span><em>◆</em>
+          <span>Technology Division</span><em>◆</em>
+          <span>Professionisti della Sanità</span><em>◆</em>
+          <span>Job Diversity</span><em>◆</em>
+          <span>MiHRo Fashion</span><em>◆</em>
+          <span>Ho.Re.Ca</span><em>◆</em>
+        </div>
+        <div class="ticker-set" aria-hidden="true">
+          <span>Ricerca &amp; Selezione</span><em>◆</em>
+          <span>Somministrazione</span><em>◆</em>
+          <span>Formazione Professionale</span><em>◆</em>
+          <span>30 Filiali · Italia</span><em>◆</em>
+          <span>Alti Profili</span><em>◆</em>
+          <span>Technology Division</span><em>◆</em>
+          <span>Professionisti della Sanità</span><em>◆</em>
+          <span>Job Diversity</span><em>◆</em>
+          <span>MiHRo Fashion</span><em>◆</em>
+          <span>Ho.Re.Ca</span><em>◆</em>
+        </div>
+      </div>
+    </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 6 — SERVICES SECTION
+       6-card service grid with hover interactions
+  ════════════════════════════════════════════════════ -->
+    <section id="servizi" class="section-services reveal-section">
+      <div class="section-inner">
+        <div class="section-head two-col">
+          <div class="sh-left">
+            <div class="section-eyebrow">I Nostri Servizi</div>
+            <h2 class="section-title">Soluzioni HR<br><em>complete.</em></h2>
+          </div>
+          <div class="sh-right">
+            <p class="section-desc">Che tu sia un candidato in cerca di opportunità o un'impresa alla ricerca di talenti, AxL offre la soluzione su misura per te.</p>
+            <a href="#candidati" class="btn-text" data-scroll>Scopri tutto →</a>
+          </div>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+          <!-- Each card links → its own dedicated service page -->
+          <a class="srv-card" data-index="0" href="services/ricerca-selezione.html">
+            <div class="srv-num">01</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">🔍</span></div>
+            <h3 class="srv-title">Ricerca &amp; Selezione</h3>
+            <p class="srv-body">Identifichiamo i migliori talenti attraverso processi selettivi avanzati e una rete capillare nazionale.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+          <a class="srv-card" data-index="1" href="services/somministrazione.html">
+            <div class="srv-num">02</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">🤝</span></div>
+            <h3 class="srv-title">Somministrazione</h3>
+            <p class="srv-body">Personale qualificato in tempi brevi. Gestiamo tutti gli aspetti amministrativi e contrattuali.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+          <a class="srv-card srv-card--dark" data-index="2" href="services/formazione.html">
+            <div class="srv-num">03</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">📚</span></div>
+            <h3 class="srv-title">Formazione</h3>
+            <p class="srv-body">Percorsi formativi su misura per sviluppare competenze e valorizzare il capitale umano.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+          <a class="srv-card srv-card--dark" data-index="3" href="services/alti-profili.html">
+            <div class="srv-num">04</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">⭐</span></div>
+            <h3 class="srv-title">Alti Profili</h3>
+            <p class="srv-body">Executive search per figure di middle e top management. Competenze certificate, risultati garantiti.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+          <a class="srv-card" data-index="4" href="services/job-diversity.html">
+            <div class="srv-num">05</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">♿</span></div>
+            <h3 class="srv-title">Job Diversity</h3>
+            <p class="srv-body">Inserimento lavorativo per Categorie Protette. Inclusione reale e pari opportunità ogni giorno.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+          <a class="srv-card" data-index="5" href="services/rpo-outsourcing.html">
+            <div class="srv-num">06</div>
+            <div class="srv-icon-wrap"><span class="srv-icon">🔄</span></div>
+            <p class="srv-body">L'intero processo di recruiting in outsourcing. Efficienza, precisione, riduzione dei costi.</p>
+            <div class="srv-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 7 — STATS / NUMBERS SECTION
+       Animated counters in dark band
+  ════════════════════════════════════════════════════ -->
+    <section id="numeri" class="section-stats reveal-section">
+      <div class="stats-bg-text">AxL</div>
+      <div class="section-inner">
+        <div class="stats-grid">
+          <div class="stat-item" data-target="30"    data-suffix="+">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf">+</span></div>
+            <div class="stat-label">Filiali attive in Italia</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:75%"></div></div>
+          </div>
+          <div class="stat-item" data-target="15000" data-suffix="+">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf">+</span></div>
+            <div class="stat-label">Candidati inseriti ogni anno</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:90%"></div></div>
+          </div>
+          <div class="stat-item" data-target="2500"  data-suffix="+">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf">+</span></div>
+            <div class="stat-label">Aziende clienti attive</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:65%"></div></div>
+          </div>
+          <div class="stat-item" data-target="20"    data-suffix="yr">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf">yr</span></div>
+            <div class="stat-label">Anni di esperienza HR</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:100%"></div></div>
+          </div>
+          <div class="stat-item" data-target="98"    data-suffix="%">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf">%</span></div>
+            <div class="stat-label">Soddisfazione clienti</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:98%"></div></div>
+          </div>
+          <div class="stat-item" data-target="12"    data-suffix="">
+            <div class="stat-number"><span class="stat-val">0</span><span class="stat-suf"></span></div>
+            <div class="stat-label">Divisioni specializzate</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="--pct:60%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 8 — JOB SEARCH & LISTINGS
+       Search bar + filterable job cards
+  ════════════════════════════════════════════════════ -->
+    <section id="lavoro" class="section-jobs reveal-section">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-eyebrow">Offerte di Lavoro</div>
+          <h2 class="section-title">Trova la tua<br>prossima <em>opportunità.</em></h2>
+        </div>
+
+        <!-- Search bar -->
+        <div class="job-search-bar" id="jobSearchBar">
+          <div class="jsb-field">
+            <label class="jsb-label">Ruolo</label>
+            <input type="text" class="jsb-input" id="searchRole" placeholder="es. Sviluppatore, Infermiere…">
+          </div>
+          <div class="jsb-divider"></div>
+          <div class="jsb-field">
+            <label class="jsb-label">Settore</label>
+            <select class="jsb-input" id="searchSector">
+              <option value="">Tutti i settori</option>
+              <option>Tecnologia &amp; IT</option>
+              <option>Sanità</option>
+              <option>Fashion</option>
+              <option>Industria</option>
+              <option>Ho.Re.Ca</option>
+              <option>Logistica</option>
+              <option>Amministrazione</option>
+            </select>
+          </div>
+          <div class="jsb-divider"></div>
+          <div class="jsb-field">
+            <label class="jsb-label">Contratto</label>
+            <select class="jsb-input" id="searchContract">
+              <option value="">Tutti</option>
+              <option>Tempo indeterminato</option>
+              <option>Tempo determinato</option>
+              <option>Somministrazione</option>
+              <option>Stage</option>
+            </select>
+          </div>
+          <button class="jsb-btn" id="searchBtn">Cerca</button>
+        </div>
+
+        <!-- Filter chips -->
+        <div class="filter-chips" id="filterChips">
+          <span class="chip-label">Popolari:</span>
+          <button class="chip active" data-filter="all">Tutti</button>
+          <button class="chip" data-filter="Tecnologia &amp; IT">Tech</button>
+          <button class="chip" data-filter="Sanità">Sanità</button>
+          <button class="chip" data-filter="Industria">Industria</button>
+          <button class="chip" data-filter="Ho.Re.Ca">Ho.Re.Ca</button>
+          <button class="chip" data-filter="Fashion">Fashion</button>
+        </div>
+
+        <!-- Job grid -->
+        <div class="jobs-grid" id="jobsGrid"></div>
+
+        <div class="jobs-more">
+          <button class="btn-load-more" id="loadMoreBtn">Carica altre offerte</button>
+          <span class="jobs-count" id="jobsCount"></span>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 9 — DIVISIONS SECTION
+       Horizontal scroll divisions showcase
+  ════════════════════════════════════════════════════ -->
+    <section id="divisioni" class="section-divisions reveal-section">
+      <div class="section-inner">
+        <div class="section-head two-col">
+          <div class="sh-left">
+            <div class="section-eyebrow">Divisioni Specializzate</div>
+            <h2 class="section-title">12 verticali,<br><em>un'unica</em> expertise.</h2>
+          </div>
+          <div class="sh-right">
+            <p class="section-desc">Ogni divisione AxL è guidata da recruiter con profonda conoscenza del settore. Non cerchiamo solo profili — capiamo il mercato.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal scroll -->
+      <div class="div-scroll-container">
+        <div class="div-scroll-track" id="divScrollTrack">
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#1a73e8"></div>
+            <div class="div-icon">💻</div>
+            <h3>Technology</h3>
+            <p>Sviluppo software, cloud, cybersecurity e digital transformation.</p>
+            <div class="div-tag">IT · Digital</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#34a853"></div>
+            <div class="div-icon">🏥</div>
+            <h3>Professionisti della Sanità</h3>
+            <p>Medici, infermieri e operatori sanitari per strutture pubbliche e private.</p>
+            <div class="div-tag">Healthcare</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#ff6b35"></div>
+            <div class="div-icon">👗</div>
+            <h3>MiHRo Fashion</h3>
+            <p>Professionisti per fashion retail, lusso e made in Italy.</p>
+            <div class="div-tag">Fashion · Luxury</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#fbbc04"></div>
+            <div class="div-icon">🍽️</div>
+            <h3>Ho.Re.Ca</h3>
+            <p>Chef, camerieri, direttori hotel. Ristorazione e ospitalità.</p>
+            <div class="div-tag">Food · Hotel</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#7b2d8b"></div>
+            <div class="div-icon">⭐</div>
+            <h3>Alti Profili</h3>
+            <p>Executive search per middle e top management in ogni settore.</p>
+            <div class="div-tag">Executive</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#00897b"></div>
+            <div class="div-icon">♿</div>
+            <h3>Job Diversity</h3>
+            <p>Inserimento lavorativo Categorie Protette. Inclusione vera.</p>
+            <div class="div-tag">Inclusione</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#c0392b"></div>
+            <div class="div-icon">👜</div>
+            <h3>Leather</h3>
+            <p>Concerie, pelletterie, calzaturifici. Made in Italy di eccellenza.</p>
+            <div class="div-tag">Manifattura</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#2c3e50"></div>
+            <div class="div-icon">📊</div>
+            <h3>Full HR</h3>
+            <p>Consulenza HR integrata: recruiting, formazione, payroll completo.</p>
+            <div class="div-tag">HR Consulting</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#e67e22"></div>
+            <div class="div-icon">🏭</div>
+            <h3>Grandi Clienti</h3>
+            <p>Gestione su larga scala per imprese con elevate esigenze di personale.</p>
+            <div class="div-tag">Enterprise</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#16a085"></div>
+            <div class="div-icon">🏛️</div>
+            <h3>Politiche Attive</h3>
+            <p>Percorsi finanziati di inserimento, orientamento e riqualificazione.</p>
+            <div class="div-tag">Formazione</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#8e44ad"></div>
+            <div class="div-icon">🏠</div>
+            <h3>Close to You</h3>
+            <p>Assistenza domiciliare qualificata e continuativa per le famiglie.</p>
+            <div class="div-tag">Cura · Famiglia</div>
+          </div>
+          <div class="div-card">
+            <div class="div-card-bg" style="--clr:#2980b9"></div>
+            <div class="div-icon">🚀</div>
+            <h3>RPO</h3>
+            <p>Recruitment Process Outsourcing. Il recruiting diventa un vantaggio.</p>
+            <div class="div-tag">Outsourcing</div>
+          </div>
+        </div>
+      </div>
+      <div class="div-scroll-controls">
+        <button class="dsc-btn" id="divScrollLeft">←</button>
+        <div class="dsc-dots" id="divDots"></div>
+        <button class="dsc-btn" id="divScrollRight">→</button>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 10 — BRANCHES MAP SECTION
+       Interactive branch list with region filter
+  ════════════════════════════════════════════════════ -->
+    <section id="filiali" class="section-branches reveal-section">
+      <div class="section-inner">
+        <div class="section-head two-col">
+          <div class="sh-left">
+            <div class="section-eyebrow">Le Nostre Filiali</div>
+            <h2 class="section-title">30 filiali,<br><em>tutta Italia.</em></h2>
+          </div>
+          <div class="sh-right">
+            <p class="section-desc">Da nord a sud, una filiale AxL è sempre vicina a te. Ogni ufficio è presidiato da specialisti locali del mercato del lavoro.</p>
+          </div>
+        </div>
+
+        <!-- Region filter -->
+        <div class="region-tabs" id="regionTabs">
+          <button class="reg-tab active" data-region="all">Tutte</button>
+          <button class="reg-tab" data-region="nord">Nord</button>
+          <button class="reg-tab" data-region="centro">Centro</button>
+          <button class="reg-tab" data-region="sud">Sud &amp; Isole</button>
+        </div>
+
+        <div class="branches-grid" id="branchesGrid"></div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 11 — CHI SIAMO / ABOUT
+       Company story + team values
+  ════════════════════════════════════════════════════ -->
+    <section id="chi-siamo" class="section-about reveal-section">
+      <div class="section-inner">
+        <div class="about-layout">
+          <div class="about-left">
+            <div class="section-eyebrow">Chi Siamo</div>
+            <h2 class="section-title">Vent'anni di<br>storie di <em>successo.</em></h2>
+            <p class="section-desc">Dal 2004, AxL S.p.A. connette persone e imprese con passione, professionalità e una rete che cresce ogni anno.</p>
+            <p class="section-desc" style="margin-top:16px">Nati a Darfo Boario Terme, oggi siamo presenti in tutta Italia con 30 filiali, 12 divisioni specializzate e un team di oltre 300 professionisti HR.</p>
+            <div class="about-values">
+              <div class="value-item">
+                <span class="value-icon">🎯</span>
+                <div><strong>Precisione</strong><br><small>Matching accurato tra persona e ruolo</small></div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">🤝</span>
+                <div><strong>Fiducia</strong><br><small>Relazioni durature con candidati e aziende</small></div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">🚀</span>
+                <div><strong>Innovazione</strong><br><small>Processi digitali e AI-powered</small></div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon">🌱</span>
+                <div><strong>Sostenibilità</strong><br><small>People first. Sempre.</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-right">
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-year">2004</div>
+                <div class="tl-content">
+                  <strong>Fondazione</strong>
+                  <p>AxL nasce a Darfo Boario Terme come agenzia locale con 3 filiali.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2010</div>
+                <div class="tl-content">
+                  <strong>Espansione Nord Italia</strong>
+                  <p>Apertura di 10 nuove filiali in Lombardia, Piemonte e Veneto.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2016</div>
+                <div class="tl-content">
+                  <strong>Divisioni Specializzate</strong>
+                  <p>Lancio delle prime divisioni verticali: Technology, Sanità, Fashion.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2020</div>
+                <div class="tl-content">
+                  <strong>Trasformazione Digitale</strong>
+                  <p>Piattaforma digitale, recruiting AI-powered e portale candidati.</p>
+                </div>
+              </div>
+              <div class="tl-item active">
+                <div class="tl-year">2025</div>
+                <div class="tl-content">
+                  <strong>30 Filiali · 12 Divisioni</strong>
+                  <p>Leader nazionale. Top Employer. 15.000+ inserimenti all'anno.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 12 — TESTIMONIALS
+       Rotating testimonials from candidates & companies
+  ════════════════════════════════════════════════════ -->
+    <section id="testimonianze" class="section-testimonials reveal-section">
+      <div class="section-inner">
+        <div class="section-head centered">
+          <div class="section-eyebrow">Testimonianze</div>
+          <h2 class="section-title">Cosa dicono<br>di <em>noi.</em></h2>
+        </div>
+
+        <div class="testimonials-container">
+          <div class="testi-track" id="testiTrack">
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <blockquote>"Grazie ad AxL ho trovato lavoro come sviluppatore senior in meno di due settimane. Il recruiter conosceva davvero il settore tech."</blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar">MR</div>
+                <div><strong>Marco Rossi</strong><br><small>Sviluppatore Java · Milano</small></div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <blockquote>"Collaboriamo con AxL da 5 anni per la nostra divisione IT. Efficienza, qualità dei profili e reattività eccezionale."</blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar">GF</div>
+                <div><strong>Giulia Ferrari</strong><br><small>HR Manager · Brescia</small></div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <blockquote>"Dopo 6 mesi di ricerca autonoma, in 3 giorni con AxL avevo già il primo colloquio. Assunta in un mese. Incredibile."</blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar">SB</div>
+                <div><strong>Sofia Bianchi</strong><br><small>Infermiera · Bergamo</small></div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-stars">★★★★☆</div>
+              <blockquote>"La divisione Ho.Re.Ca di AxL ci ha fornito uno chef stellato in tempo record. Professionalità rara nel settore."</blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar">LC</div>
+                <div><strong>Luca Conti</strong><br><small>Proprietario Ristorante · Iseo</small></div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <blockquote>"Il percorso di formazione con AxL mi ha permesso di riqualificarmi e trovare un nuovo lavoro a 45 anni. Non avrei pensato fosse possibile."</blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar">AP</div>
+                <div><strong>Anna Pellegrini</strong><br><small>Operations Manager · Darfo</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-nav">
+            <button class="testi-prev" id="testiPrev">←</button>
+            <div class="testi-dots" id="testiDots"></div>
+            <button class="testi-next" id="testiNext">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 13 — APPLY / CONTACT SECTION
+       Full application form + contact info
+  ════════════════════════════════════════════════════ -->
+    <section id="candidati" class="section-apply reveal-section">
+      <div class="section-inner">
+        <div class="apply-layout">
+          <div class="apply-info">
+            <div class="section-eyebrow" style="color:var(--accent)">Candidati</div>
+            <h2 class="section-title apply-title">Pronto per il<br>prossimo <em>passo?</em></h2>
+            <p class="section-desc apply-desc">Invia il tuo CV e lascia che i nostri recruiter ti guidino verso la carriera che meriti. Risposta in 24 ore.</p>
+
+            <div class="apply-promises">
+              <div class="promise-item"><span>✓</span> Risposta entro 24 ore lavorative</div>
+              <div class="promise-item"><span>✓</span> Recruiter dedicato al tuo profilo</div>
+              <div class="promise-item"><span>✓</span> Accesso a tutte le offerte AxL</div>
+              <div class="promise-item"><span>✓</span> Supporto durante tutto il processo</div>
+            </div>
+
+            <div class="apply-contact">
+              <div class="contact-item">
+                <span class="ci-icon">📍</span>
+                <div>
+                  <strong>Sede di Darfo</strong>
+                  <span>Via Roma 45, Darfo Boario Terme (BS)</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon">📞</span>
+                <div>
+                  <strong>Telefono</strong>
+                  <span>+39 0364 123456</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon">✉️</span>
+                <div>
+                  <strong>Email</strong>
+                  <span>darfo@aperelle.it</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="apply-form-wrap" id="applyFormWrap">
+            <div class="apply-form-header">
+              <h3>Invia la tua candidatura</h3>
+              <p>Compila il modulo — ti risponderemo entro 24h</p>
+            </div>
+            <form class="apply-form" id="applyForm" novalidate>
+              <div class="form-row two-col">
+                <div class="form-group" id="fg-nome">
+                  <label>Nome</label>
+                  <input type="text" id="fNome" placeholder="Mario" autocomplete="given-name">
+                  <span class="form-error"></span>
+                </div>
+                <div class="form-group" id="fg-cognome">
+                  <label>Cognome</label>
+                  <input type="text" id="fCognome" placeholder="Rossi" autocomplete="family-name">
+                  <span class="form-error"></span>
+                </div>
+              </div>
+              <div class="form-group" id="fg-email">
+                <label>Email</label>
+                <input type="email" id="fEmail" placeholder="mario@email.it" autocomplete="email">
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group" id="fg-tel">
+                <label>Telefono <span class="optional">(opzionale)</span></label>
+                <input type="tel" id="fTel" placeholder="+39 000 0000000">
+              </div>
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label>Settore</label>
+                  <select id="fSector">
+                    <option value="">Seleziona</option>
+                    <option>Tecnologia &amp; IT</option>
+                    <option>Sanità</option>
+                    <option>Fashion &amp; Retail</option>
+                    <option>Industria</option>
+                    <option>Ho.Re.Ca</option>
+                    <option>Amministrazione</option>
+                    <option>Altro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Anni di esperienza</label>
+                  <select id="fExp">
+                    <option>Neolaureato / Stage</option>
+                    <option>1–3 anni</option>
+                    <option>3–5 anni</option>
+                    <option>5–10 anni</option>
+                    <option>10+ anni</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" id="fg-msg">
+                <label>Presentati in breve</label>
+                <textarea id="fMsg" rows="4" placeholder="Es. Sviluppatore Java con 5 anni di esperienza in backend…"></textarea>
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group form-check">
+                <label class="check-label" id="fg-privacy">
+                  <input type="checkbox" id="fPrivacy">
+                  <span>Accetto la <a href="#" target="_blank">Privacy Policy</a> e autorizzo il trattamento dei dati</span>
+                </label>
+                <span class="form-error" id="privacyError"></span>
+              </div>
+              <button type="submit" class="btn-form-submit" id="formSubmit">
+                <span id="submitText">Invia candidatura</span>
+                <span id="submitLoader" class="submit-loader hidden">⟳</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 14 — FOOTER
+       Full footer with links, newsletter, legal
+  ════════════════════════════════════════════════════ -->
+    <footer id="site-footer" class="site-footer">
+      <div class="footer-top">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="footer-logo">Ax<span>L</span></div>
+            <p class="footer-tagline">L'agenzia per il lavoro che mette le persone al centro. Dal 2004, connettendo talenti e imprese in tutta Italia.</p>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/axl_officialpage/" class="social-link" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/axl-spa" class="social-link" target="_blank" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <a href="https://www.facebook.com/AxL-Agenzia-per-il-Lavoro-1265798650169753/" class="social-link" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UC4JJzFKOC2kYsh1udHD868g/" class="social-link" target="_blank" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" fill="none" stroke="currentColor" stroke-width="1.5"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h4>Candidati</h4>
+              <ul>
+                <li><a href="#lavoro"    data-scroll>Offerte di lavoro</a></li>
+                <li><a href="#candidati" data-scroll>Invia CV</a></li>
+                <li><a href="#divisioni" data-scroll>Divisioni</a></li>
+                <li><a href="#">Area riservata</a></li>
+                <li><a href="#formazione" data-scroll>Formazione</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Aziende</h4>
+              <ul>
+                <li><a href="#servizi" data-scroll>Ricerca personale</a></li>
+                <li><a href="#servizi" data-scroll>Somministrazione</a></li>
+                <li><a href="#divisioni" data-scroll>RPO</a></li>
+                <li><a href="#">Login clienti</a></li>
+                <li><a href="#">Full HR</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>AxL</h4>
+              <ul>
+                <li><a href="#chi-siamo" data-scroll>Chi siamo</a></li>
+                <li><a href="#filiali"   data-scroll>Filiali</a></li>
+                <li><a href="#">Lavora in AxL</a></li>
+                <li><a href="#">Trasparenza</a></li>
+                <li><a href="#">Press &amp; Media</a></li>
+              </ul>
+            </div>
+            <div class="footer-col footer-col--newsletter">
+              <h4>Newsletter</h4>
+              <p>Ricevi le offerte di lavoro direttamente nella tua inbox.</p>
+              <div class="newsletter-form">
+                <input type="email" id="nlEmail" placeholder="tua@email.it">
+                <button onclick="subscribeNewsletter()">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-inner footer-bottom-inner">
+          <span class="footer-copy">© 2026 AxL S.p.A. · P.IVA 02345678901 · Aut. Min. Lav. Prot. n° 1234 del 01/01/2004</span>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Note Legali</a>
+          </div>
+          <span class="footer-city">Darfo Boario Terme · BS</span>
+        </div>
+      </div>
+    </footer>
+
+  </main><!-- end #main-content -->
+
+  <!-- ═══════════════════════════════════════════════════
+       GROUP 15 — FLOATING UI ELEMENTS
+       Back-to-top, toast notifications, cookie banner
+  ════════════════════════════════════════════════════ -->
+  <button class="back-to-top" id="backToTop" aria-label="Torna su">↑</button>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="cookie-banner hidden" id="cookieBanner">
+    <div class="cookie-inner">
+      <p>🍪 Usiamo cookie per migliorare la tua esperienza. <a href="#">Leggi la Policy</a></p>
+      <div class="cookie-btns">
+        <button class="cookie-accept" onclick="acceptCookies()">Accetta</button>
+        <button class="cookie-decline" onclick="declineCookies()">Solo essenziali</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS files — loaded at bottom for performance -->
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
