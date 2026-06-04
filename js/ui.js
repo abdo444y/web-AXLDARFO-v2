@@ -5,7 +5,7 @@ const UI = {
         
         this.setupCursor();          
         this.setupLoader();          
-        this.setupEventListeners();  // تشغيل ربط الأسهم هنا
+        this.setupEventListeners();  // تفعيل السلايدر والأسهم من هنا
     },
 
     // 1. التحكم في شكل وحركة الماوس
@@ -43,48 +43,34 @@ const UI = {
         }
     },
 
-    // 3. ربط أسهم السلايدر بناءً على كلاسات موقعك الحالية
+    // 3. تفعيل السلايدر والتحكم بالأسهم بمقدار كارت واحد
     setupEventListeners: function() {
-        // تحديد الحاوية الكبيرة للكروت بناءً على موقعك
-        const container = document.querySelector('.swiper-wrapper'); 
-        // تحديد الأسهم السفلية بناءً على الكلاسات الموجودة في الـ HTML لديك
-        const nextBtn = document.querySelector('.swiper-button-next');       
-        const prevBtn = document.querySelector('.swiper-button-prev');        
-
-        if (container && nextBtn && prevBtn) {
+        // نتحقق أولاً إذا كانت حاوية السلايدر موجودة في الصفحة
+        if (document.querySelector('.swiper')) {
             
-            // دالة تحسب عرض الكارت الواحد بدقة للانتقال خطوة واحدة
-            const getScrollAmount = () => {
-                const firstCard = container.querySelector('.swiper-slide'); 
-                if (firstCard) {
-                    const cardStyle = window.getComputedStyle(firstCard);
-                    const cardWidth = firstCard.offsetWidth;
-                    // حساب المسافات الجانبية (Gap / Margins)
-                    const marginRight = parseFloat(cardStyle.marginRight) || 0;
-                    const marginLeft = parseFloat(cardStyle.marginLeft) || 0;
-                    
-                    return cardWidth + marginRight + marginLeft;
+            // تشغيل السلايدر رسمياً برمجياً
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: 1,       // الوضع الافتراضي للشاشات الصغيرة (كارت واحد)
+                spaceBetween: 20,       // المسافة بين الكروت
+                loop: false,            // هل تريد التمرير اللانهائي؟ (اجعلها true إذا أردت)
+                
+                // ربط الأسهم السفلية بالكاروسيل تلقائياً
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // لكي يتغير عدد الكروت المعروضة تلقائياً حسب حجم الشاشة (Responsive)
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2, // كارتين في الشاشات المتوسطة
+                    },
+                    1024: {
+                        slidesPerView: 4, // 4 كروت في شاشات الكمبيوتر مثل تصميمك تماماً
+                    }
                 }
-                return 320; // قيمة افتراضية تقريبية لحجم الكارت في موقعك
-            };
-
-            // عند الضغط على سهم اليمين -> تحرك كارت واحد للأمام
-            nextBtn.addEventListener('click', () => {
-                const scrollAmount = getScrollAmount();
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
             });
-
-            // عند الضغط على سهم اليسار -> تحرك كارت واحد للخلف
-            prevBtn.addEventListener('click', () => {
-                const scrollAmount = getScrollAmount();
-                container.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
+            
         }
     }
 };
